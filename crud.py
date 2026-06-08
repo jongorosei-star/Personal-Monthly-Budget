@@ -43,3 +43,18 @@
 43     for trx in data["transactions"]:
 44         print("-" * 80)
 45         print(f"ID        : {trx['id']}")
+46         print(f"Tanggal   : {trx['date']}")
+47         print(f"Jumlah    : {trx['amount']:,.0f}")
+48         print(f"Kategori  : {trx['category']}")
+49         print(f"Deskripsi : {trx['description']}")
+50
+51 def delete_transaction(data):
+52     trx_id = input("Masukan ID: ")
+53     data["transactions"] = [
+54         trx
+55         for trx in data["transactions"]
+56         if trx["id"] != trx_id
+57     ]
+58     save_data(data)
+59
+               
