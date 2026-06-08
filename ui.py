@@ -1,26 +1,21 @@
-─────┬────────────────────────────────────────────────────────────────────────
-     │ File: ui.py
-─────┼────────────────────────────────────────────────────────────────────────
-   1 │ def logo():
-   2 │
-   3 │     print("""
-   4 │ ╔══════════════════════════════════════╗
-   5 │ ║     MONTHLY BUDGET TRACKER v1.0      ║
-   6 │ ║         By Yourname Developer 🚀         ║
-   7 │ ╚══════════════════════════════════════╝
-   8 │ """)
-   9 │
-  10 │
-  11 │ def menu():
-  12 │
-  13 │     print("""
-  14 │ [1] Tambah Pengeluaran
-  15 │ [2] Lihat Transaksi
-  16 │ [3] Hapus Transaksi
-  17 │ [4] Analisis Budget
-  18 │ [5] Kecepatan Belanja
-  19 │ [6] Export Laporan
-  20 │ [7] Backup Data
-  21 │ [0] Keluar
-  22 │ """)
-─────┴────────────────────────────────────────────────────────────────────────
+ def logo():
+
+     print("""
+ ╔══════════════════════════════════════╗
+ ║     MONTHLY BUDGET TRACKER v1.0      ║
+ ║         By Yourname Developer 🚀         ║
+ ╚══════════════════════════════════════╝
+ """)
+
+ def menu():
+
+     print("""
+ [1] Tambah Pengeluaran
+ [2] Lihat Transaksi
+ [3] Hapus Transaksi
+ [4] Analisis Budget
+ [5] Kecepatan Belanja
+ [6] Export Laporan
+ [7] Backup Data
+ [0] Keluar
+  """)
