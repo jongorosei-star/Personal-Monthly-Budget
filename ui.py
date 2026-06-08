@@ -6,7 +6,7 @@
    3 │     print("""
    4 │ ╔══════════════════════════════════════╗
    5 │ ║     MONTHLY BUDGET TRACKER v1.0      ║
-   6 │ ║         By Ropo Developer 🚀         ║
+   6 │ ║         By Yourname Developer 🚀         ║
    7 │ ╚══════════════════════════════════════╝
    8 │ """)
    9 │
