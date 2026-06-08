@@ -20,7 +20,7 @@ Personal-Expense-Tracker/ │ ├── main.py          # Program utama ├─�
 
 #Cara menjalankan
 
-git clone https://github.com/jongorosei-star/personal-expense-tracker.git
+git clone https://github.com/jongorosei-star/Personal-Monthly-Budget.git
 
 cd personal-expense-tracker
 
