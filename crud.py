@@ -1,60 +1,60 @@
- 1 import json
- 2 import os
- 3 from datetime import datetime
- 4
- 5 DB_FILE = "database.json"
- 6
- 7 def load_data():
- 8     if not os.path.exists(DB_FILE):
- 9         return {}
-10     with open(DB_FILE, "r") as file:
-11         return json.load(file)
-12
-13 def save_data(data):
-14     with open(DB_FILE, "w") as file:
-15         json.dump(data, file, indent=4)
-16
-17 def generate_id(data):
-18     total = len(data["transactions"]) + 1
-19     return f"EXP{total:03}"
-20
-21 def add_transaction(data):
-22     amount = data["profile"]["monthly_income"]
-23     trx_type = input(
-24         "Type (income/expense): "
-25     ).strip().lower()
-26     amount = float(input("Jumlah: "))
-27     category = input("Kategori: ")
-28     description = input("Deskripsi: ")
-29
-30     transaction = {
-31         "id": generate_id(data),
-32         "date": datetime.now().strftime("%Y-%m-%d"),
-33         "type": trx_type,
-34         "amount": amount,
-35         "category": category,
-36         "description": description
-37     }
-38     data["transactions"].append(transaction)
-39     save_data(data)
-40     print("Transaksi berhasil ditambahkan.")
-41
-42 def show_transaction(data):
-43     for trx in data["transactions"]:
-44         print("-" * 80)
-45         print(f"ID        : {trx['id']}")
-46         print(f"Tanggal   : {trx['date']}")
-47         print(f"Jumlah    : {trx['amount']:,.0f}")
-48         print(f"Kategori  : {trx['category']}")
-49         print(f"Deskripsi : {trx['description']}")
-50
-51 def delete_transaction(data):
-52     trx_id = input("Masukan ID: ")
-53     data["transactions"] = [
-54         trx
-55         for trx in data["transactions"]
-56         if trx["id"] != trx_id
-57     ]
-58     save_data(data)
-59
+ import json
+ import os
+ from datetime import datetime
+
+ DB_FILE = "database.json"
+
+ def load_data():
+     if not os.path.exists(DB_FILE):
+         return {}
+     with open(DB_FILE, "r") as file:
+         return json.load(file)
+
+ def save_data(data):
+     with open(DB_FILE, "w") as file:
+         json.dump(data, file, indent=4)
+
+ def generate_id(data):
+     total = len(data["transactions"]) + 1
+     return f"EXP{total:03}"
+
+ def add_transaction(data):
+     amount = data["profile"]["monthly_income"]
+     trx_type = input(
+         "Type (income/expense): "
+     ).strip().lower()
+     amount = float(input("Jumlah: "))
+     category = input("Kategori: ")
+     description = input("Deskripsi: ")
+
+     transaction = {
+         "id": generate_id(data),
+         "date": datetime.now().strftime("%Y-%m-%d"),
+         "type": trx_type,
+         "amount": amount,
+         "category": category,
+         "description": description
+     }
+     data["transactions"].append(transaction)
+     save_data(data)
+     print("Transaksi berhasil ditambahkan.")
+
+ def show_transaction(data):
+     for trx in data["transactions"]:
+         print("-" * 80)
+         print(f"ID        : {trx['id']}")
+         print(f"Tanggal   : {trx['date']}")
+         print(f"Jumlah    : {trx['amount']:,.0f}")
+         print(f"Kategori  : {trx['category']}")
+         print(f"Deskripsi : {trx['description']}")
+
+ def delete_transaction(data):
+     trx_id = input("Masukan ID: ")
+     data["transactions"] = [
+         trx
+         for trx in data["transactions"]
+         if trx["id"] != trx_id
+     ]
+     save_data(data)
+
                
